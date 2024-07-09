@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <style>
+
+header {
+    text-align: left;
+    }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+        
+html {
+    font-size: 30px;
+}
+
+body {
+    background-color:   #998a6b    ;
+    color:  #330533 ;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+
+* {
+    font-family: "Press Start 2P";
+}
+
+
+input[type=number]  {
+    padding: 12px 27px;
+    border: 6px solid #666647 ;
+    background-color: #ccbdad  ;
+    color:  #330533 ;
+    border-radius: 4px;
+}
+input[type=number]:focus {
+    border: 7px solid #666647 ;
+    padding: 11px 27px;
+}
+
+input[type=button] {
+    background-color: #330533;
+    cursor: default;
+    border: none;
+    color: #666647;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width:25%;
+}
+
+button {
+        background-color: #666647;
+        border-radius: 20px;
+        cursor: default;
+        border: none;
+        color: #330533;
+        padding: 20px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        width: 200px;
+    }
+
+button:hover {
+    background-color: #ccbdad;
+    border-radius: 20px;
+    cursor: default;
+    border: none;
+    color: #330533;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width: 200px;
+}
+
+
+
+
+a {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover, a:active {
+    color: rgb(50, 50, 50);
+}
+
+    </style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="multiplication: damn">
+        <title> Multiplication </title>
+        <link rel="icon" href="bw.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <button>Retreat!</button>
+            </a>
+        </header>
+        <h1>
+            Solve: 
+        </h1> 
+        <h3></h3>
+        <h4></h4>  
+            <input type="number" name="Answer" placeholder="Answer:" id="reply" required autofocus>
+            <br>
+            <br>
+            <input id="enter" type="button" value="Generate Question" onClick="checkAns()">
+        <script>
+            var num1 = 0
+            var num2 = 0
+            var sign = '*'
+            var question = " " + num1 + sign + num2
+            var ans = 0
+            var min = -20
+            var max = 20
+            var trip = true
+            var streak = 0
+            var score = 0
+
+            if (trip == true) {
+                genQuest()
+                trip = false
+            }
+
+            function genQuest() {
+                num1 = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (num1 == 0) {
+                    num1 = max
+                }
+                num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (num2 == 0) {
+                    num2 = max
+                }
+                ans = num1 * num2                
+              
+                if (num2 >= 0) {
+                    question = " " + num1 + sign + num2
+                }
+                else {
+                    question = " " + num1 + sign + "(" + num2 + ")"
+                }
+                document.querySelector("h3").textContent = 'score=' + score
+                document.querySelector("h4").textContent = 'streak=' + streak
+                document.getElementById('enter').onClick = null
+                document.getElementById('enter').value = "Enter";
+                document.querySelector("h1").textContent = `Solve:${question}`
+                
+                ///<!--document.getElementById('enter').onClick = "checkAns()"-->
+            }
+
+            var input = document.getElementById("reply");
+            input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("enter").click();
+            }
+            });
+
+            function checkAns() {
+                var reply = document.getElementById("reply").value;
+                if (reply == ans) {
+                    document.querySelector("h2").textContent = ``
+                    //<!--document.querySelector("h2").textContent = `Correct!`
+                    streak ++
+                    score ++
+                    document.querySelector("h3").textContent = 'score=' + score
+                    document.querySelector("h4").textContent = 'streak=' + streak
+                    genQuest()
+                    ///<!--promptToContinue()
+                }
+                else if (reply == "") {
+                    document.querySelector("h2").textContent = `No answer detected`
+                }
+                else {
+                    document.querySelector("h2").textContent = `Incorrect!`
+                    score --
+                    streak = 0
+                    document.querySelector("h3").textContent = 'score=' + score
+                    document.querySelector("h4").textContent = 'streak=' + streak
+                }
+                document.getElementById('reply').value='';
+
+            }
+            //<!--not used-->
+            function promptToContinue() {
+                document.querySelector("h1").textContent = `Correct!`
+                document.querySelector("h2").textContent = `Press continue to generate a new question`
+                document.getElementById('enter').value = "continue";
+                document.getElementById('enter').onClick = genQuest();
+            }
+        </script>
+        <h2></h2>
+    </body>
+</html>

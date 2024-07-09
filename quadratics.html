@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <style>
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+        
+html {
+    font-size: 30px;
+}
+
+body {
+    background-color:   #998a6b    ;
+    color:  #330533 ;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+
+* {
+    font-family: "Press Start 2P";
+}
+
+
+input[type=number]  {
+    padding: 12px 28px;
+    border: 6px solid #666647 ;
+    background-color: #ccbdad  ;
+    color:  #330533 ;
+    border-radius: 4px;
+}
+input[type=number]:focus {
+    border: 7px solid #666647 ;
+    padding: 11px 27px;
+}
+
+input[type=button] {
+    background-color: #330533;
+    cursor: default;
+    border: none;
+    color: #666647;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width:25%;
+}
+
+select {
+    font-size: 30px;
+    text-align: center;
+    background-color: #330533;
+    cursor: default;
+    border: none;
+    color: #666647;
+    padding: 15px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width:20%;
+    
+
+}
+
+
+
+button {
+        background-color: #666647;
+        border-radius: 20px;
+        cursor: default;
+        border: none;
+        color: #330533;
+        padding: 20px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        width: 200px;
+    }
+
+button:hover {
+    background-color: #ccbdad;
+    border-radius: 20px;
+    cursor: default;
+    border: none;
+    color: #330533;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width: 200px;
+}
+
+
+
+a {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover, a:active {
+    color: rgb(50, 50, 50);
+}
+
+    </style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="Type shit type shit -Timur">
+        <title> Quadratics </title>
+        <link rel="icon" href="bw.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="command">
+            Find roots of: 
+        </h1>
+        <h1 id="quest"></h1>
+        <h3></h3>
+        <h4></h4>  
+            <input type="number" name="Root1" placeholder="Root 1:" id="reply1" required autofocus>
+            <input type="number" name="Root2" placeholder="Root 2:" id="reply2" required autofocus>
+            <br>
+            <br>
+            <input id="reply" type="button" value="Generate Question" onClick="checkAns()">
+            <br>
+            <br>
+            <br>
+            <label for="difficulty">Select Difficulty:</label>
+            <br>
+            <select id="difficulty" onchange="fakyuu()" name="difficulty" size="5">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="agh">AAAGH</option>
+            <option value="fuck"><strong>F U C K</strong></option>
+            
+  </select>
+        <script>
+            var r1Dec = 0
+            var r1 = 0
+            var r2Dec = 0
+            var r2 = 0
+            var q1Dec = 0
+            var q1 = 0
+            var q2Dec = 0
+            var q2 = 0
+            var question = " " + q1 * q2 + "x" + " + " + (q1 * r2 + q2 * r1) + "x" + " + " + r1 * r2
+            var ans1 = 0
+            var ans2 = 0
+            var ansArr = []
+            var minR = -20
+            var maxR = 20
+            var minQ = -20
+            var maxQ = 20
+            var trip = true
+            var streak = 0
+            var score = 0
+            var olDiff
+            var newDiff
+
+            newDiff = document.getElementById('difficulty').value
+            console.log(newDiff)
+            function fakyuu() {
+                genQuest()
+                olDiff = document.getElementById('difficulty').value
+            }
+
+            if (trip == true) {
+                genQuest()
+                trip = false
+            }
+
+            function genQuest() {
+                if (document.getElementById('difficulty').value == "easy") {
+                    minR = 1
+                    maxR = 10
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+                }
+                else if(document.getElementById('difficulty').value == "medium") {
+                    var minR = 1
+                    var maxR = 20
+                    //<!-- var minQ = 1
+                    //<!-- var maxQ = 5
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+                }
+                else if(document.getElementById('difficulty').value == "hard") {
+                    var minR = 10
+                    var maxR = 50
+
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+
+                    //<!-- var minQ = 1
+                    //<!-- var maxQ = 5
+                    //<!-- q1Dec = Math.random() < 0.5 ? -1 : 1
+                    //<!-- q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                else if(document.getElementById('difficulty').value == "agh") {
+                    var minR = 20
+                    var maxR = 100
+
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+
+                    //<!-- var minQ = 1
+                    //<!-- var maxQ = 10
+                    //<!-- q1Dec = Math.random() < 0.5 ? -1 : 1
+                    //<!-- q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                else if(document.getElementById('difficulty').value == "fuck") {
+                    var minR = 100
+                    var maxR = 500
+
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+
+                    //<!-- var minQ = 1
+                    //<!-- var maxQ = 50
+                    //<!-- q1Dec = Math.random() < 0.5 ? -1 : 1
+                    //<!-- q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                isPos = parseInt(Math.random() * 2) ?  true : false;
+                r1Dec = Math.random() < 0.5 ? -1 : 1
+                r1 = (Math.floor(Math.random() * (maxR - minR + 1)) + minR) * r1Dec;
+                r2Dec = Math.random() < 0.5 ? -1 : 1
+                r2 = (Math.floor(Math.random() * (maxR - minR + 1)) + minR) * r2Dec ;
+                
+                q1 = (Math.floor(Math.random() * (maxQ - minQ + 1)) + minQ) * q1Dec ;
+                
+                q2 = (Math.floor(Math.random() * (maxQ - minQ + 1)) + minQ) * q2Dec ;
+
+                ans1 = r1
+                ans2 = r2
+                ansArr.push(ans1)
+                ansArr.push(ans2)
+                
+                question = "X²" + " + " + (q1 * r2 + q2 * r1) + "X" + " + " + r1 * r2
+
+                document.querySelector("h3").textContent = 'score=' + score
+                document.querySelector("h4").textContent = 'streak=' + streak
+                document.getElementById('reply').onClick = null
+                document.getElementById('reply').value = "Enter";
+                document.getElementById("command").textContent = 'Find the Roots of:'
+                document.getElementById("quest").textContent = question
+            }
+            var input = document.getElementById("reply");
+            input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("enter").click();
+            }
+            });
+
+            function checkAns() {
+                var reply1 = document.getElementById("reply1").value;
+                console.log(reply1)
+                console.log(ans1)
+                var reply2 = document.getElementById("reply2").value;
+                console.log(reply2)
+                console.log(ans2)
+                if (reply1 == ans1){
+                    if (reply2 == ans2) {
+                        window.alert("yep")
+                        genQuest()
+                    }
+                    else {
+                        window.alert("almost")
+                        genQuest()
+                    }
+                }
+                else if (reply1 == ans2) {
+                    if (reply2 == ans1) {
+                        window.alert("yep")
+                        genQuest()
+                    }
+                    else {
+                        window.alert("almost")
+                        genQuest()
+                    }
+                }
+                else if (reply2 == ans1) {
+                    if (reply1 == ans2) {
+                        window.alert("yep")
+                        genQuest()
+                    }
+                    else {
+                        window.alert("almost")
+                        genQuest()
+                    }
+                }
+
+                else{
+                    window.alert("nope")
+                    genQuest()
+                }
+
+//<!--                if (ansArr.includes(reply1)) {
+//<!--                    let index = ansArr.indexOf(reply1);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    if (ansArr.includes(reply2)) {
+//<!--                    let index = ansArr.indexOf(reply2);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    window.alert("good")
+//<!--                    }
+//<!--                else {
+//<!--                        window.alert("Close, but not quite") 
+//<!--                    }
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                }
+//<!--                else if (ansArr.includes(reply2)) {
+//<!--                    let index = ansArr.indexOf(reply2);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    if (ansArr.includes(reply1)) {
+//<!--                    let index = ansArr.indexOf(reply1);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    window.alert("good")
+//<!--                    }
+//<!--                    else {
+//<!--                        window.alert("Close, but not quite") 
+//<!--                    }
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                        
+//<!--                }
+//<!--                else {
+//<!--                    window.alert("too bad")
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                }
+//<!--            }
+            }
+        </script>
+        <h2></h2>
+    </body>
+</html>
