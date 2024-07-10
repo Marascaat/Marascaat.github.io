@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<style>
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+        
+html {
+    font-size: 30px;
+}
+
+body {
+    background-color:   #998a6b    ;
+    color:  #330533 ;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+
+* {
+    font-family: "Press Start 2P";
+}
+
+
+input[type=value]  {
+    font-size: 30px;
+    border: none;
+    border-bottom: 5px solid #330533 ;
+    background-color: #998a6b  ;
+    color:  #330533 ;
+    text-align: center;
+    width: 1rem;
+    height: 1.2rem;
+    margin: 5px;
+}
+
+
+
+input[type=button] {
+    background-color: #330533;
+    cursor: default;
+    border: none;
+    color: #666647;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width:25%;
+}
+
+
+select {
+    
+    font-size: 30px;
+    text-align: center;
+    background-color: #330533;
+    cursor: default;
+    border: none;
+    color: #666647;
+    padding: 15px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width:20%;
+
+}
+
+#pneg05 {
+        font-size: 30px;
+        text-align: center;
+        background-color: #998a6b;
+        cursor: default;
+        border: none;
+        color: #330533;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+        margin: -2px;
+    }
+#pneg1 {
+        font-size: 30px;
+        text-align: center;
+        background-color: #998a6b;
+        cursor: default;
+        border: none;
+        color: #330533;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+        margin: -2px;
+    }
+#pneg15 {
+        font-size: 30px;
+        text-align: center;
+        background-color: #998a6b;
+        cursor: default;
+        border: none;
+        color: #330533;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+        margin: -2px;
+}
+#pneg2 {
+        font-size: 30px;
+        text-align: center;
+        background-color: #998a6b;
+        cursor: default;
+        border: none;
+        color: #330533;
+        text-decoration: none;
+        width: 2rem;
+        height: 2rem;
+        margin: -2px;
+}
+
+
+
+
+/* input[type=button]:hover { 
+
+}  */
+
+a {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover, a:active {
+    color: rgb(50, 50, 50);
+}
+
+</style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="Quadratics: fuuuuu">
+        <title>Quadratics</title>
+        <link rel="icon" href="ib.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="command">
+            Find roots of: 
+        </h1>
+        <h1 id="quest"></h1>
+        <h2></h2>
+        <h3></h3>
+        <h4></h4>  
+            <p>(<select id="pneg05"  name="pneg05"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient1"  id="reply1" maxlength="1" required autofocus>X<select id="pneg1"  name="pneg1"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root1"  id="reply2" maxlength="1" required>)(<select id="pneg15"  name="pneg15"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient2"  id="reply3" maxlength="1" required>X<select id="pneg2"  name="pneg2"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root2" maxlength="1" id="reply4" >)
+            <br>
+            <br>
+            <input id="enter" type="button" value="Generate Question" onClick="checkAns()">
+            <br>
+            <br>
+            
+            <br>
+            <label for="difficulty">Select Difficulty:</label>
+            <br>
+            <select id="difficulty" onchange="fakyuu()" name="difficulty" size="5">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="agh">AAAGH</option>
+            <option value="fuck"><strong>F U C K</strong></option>
+            
+            </select>
+
+        <script>
+            var r1Dec = 0
+            var r1 = 0
+            var r2Dec = 0
+            var r2 = 0
+            var q1Dec = 0 
+            var q1 = 0
+            var q2Dec = 0
+            var q2 = 0
+            var question = " " + q1 * q2 + "x" + " + " + (q1 * r2 + q2 * r1) + "x" + " + " + r1 * r2
+            var ans1 = 0
+            var ans2 = 0
+            var coefans1 = 0
+            var coefans2 = 0
+            var ansArr = []
+            var minR = -20
+            var maxR = 20
+            var minQ = -20
+            var maxQ = 20
+            var trip = true
+            var streak = 0
+            var score = 0
+            var olDiff
+            var newDiff
+
+            newDiff = document.getElementById('difficulty').value
+            console.log(newDiff)
+            function fakyuu() {
+                genQuest()
+                olDiff = document.getElementById('difficulty').value
+            }
+
+            if (trip == true) {
+                genQuest()
+                trip = false
+            }
+
+            function genQuest() {
+
+                document.getElementById("reply1").value = ""
+                document.getElementById("reply2").value = ""
+                document.getElementById("reply3").value = ""
+                document.getElementById("reply4").value = ""
+                document.getElementById("pneg05").selectedIndex = 0;
+                document.getElementById("pneg1").selectedIndex = 0; 
+                document.getElementById("pneg15").selectedIndex = 0;
+                document.getElementById("pneg2").selectedIndex = 0; 
+
+                if (document.getElementById('difficulty').value == "easy") {
+                    minR = 1
+                    maxR = 9
+                    minQ = 1
+                    maxQ = 1
+                    q1Dec = 1
+                    q2Dec = 1
+                }
+                else if(document.getElementById('difficulty').value == "medium") {
+                    var minR = 1
+                    var maxR = 9
+                    minQ = -1
+                    maxQ = 1
+                    q1Dec = Math.random() < 0.5 ? -1 : 1
+                    q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                else if(document.getElementById('difficulty').value == "hard") {
+                    var minR = 1
+                    var maxR = 9
+
+                    var minQ = 1
+                    var maxQ = 2
+                    q1Dec = Math.random() < 0.5 ? -1 : 1
+                    q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                else if(document.getElementById('difficulty').value == "agh") {
+                    var minR = 1
+                    var maxR = 9
+
+                    var minQ = 2
+                    var maxQ = 5
+                    q1Dec = Math.random() < 0.5 ? -1 : 1
+                    q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                else if(document.getElementById('difficulty').value == "fuck") {
+                    var minR = 1
+                    var maxR = 9
+
+                    var minQ = 3
+                    var maxQ = 9
+                    q1Dec = Math.random() < 0.5 ? -1 : 1
+                    q2Dec = Math.random() < 0.5 ? -1 : 1
+                }
+                
+                
+                isPos = parseInt(Math.random() * 2) ?  true : false;
+                r1Dec = Math.random() < 0.5 ? -1 : 1
+                r1 = (Math.floor(Math.random() * (maxR - minR + 1)) + minR) * r1Dec;
+                if (r1 == 0) {
+                    r1 = 1
+                }
+                r2Dec = Math.random() < 0.5 ? -1 : 1
+                r2 = (Math.floor(Math.random() * (maxR - minR + 1)) + minR) * r2Dec ;
+                if (r2 == 0) {
+                    r2 = 1
+                }
+
+                q1 = (Math.floor(Math.random() * (maxQ - minQ + 1)) + minQ) * q1Dec ;
+                if (q1 == 0) {
+                    q1 = 1
+                }
+                q2 = (Math.floor(Math.random() * (maxQ - minQ + 1)) + minQ) * q2Dec ;
+                if (q2 == 0) {
+                    q2 = 1
+                }
+
+                ans1 = r1
+                ans2 = r2
+                coefans1 = q1
+                coefans2 = q2
+
+
+
+                ansArr.push(ans1)
+                ansArr.push(ans2)
+                
+                question = q1 * q2 + "X²" + " + " + (q1 * r2 + q2 * r1) + "X" + " + " + r1 * r2
+
+                document.querySelector("h3").textContent = 'score=' + score
+                document.querySelector("h4").textContent = 'streak=' + streak
+                document.getElementById('enter').onClick = null
+                document.getElementById('enter').value = "Enter";
+                document.getElementById("command").textContent = 'Find the Roots of:'
+                document.getElementById("quest").textContent = question
+            }
+            
+            var input = document.getElementById("enter");
+            
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("enter").click();
+                }
+                });
+
+            function checkAns() {
+                var coef1sig = document.getElementById("pneg05").value;
+                var coef1 = document.getElementById("reply1").value;
+                var root1sig = document.getElementById("pneg1").value; 
+                var root1 = document.getElementById("reply2").value;
+                var coef2sig = document.getElementById("pneg15").value;
+                var coef2 = document.getElementById("reply3").value;
+                var root2sig = document.getElementById("pneg2").value; 
+                var root2 = document.getElementById("reply4").value;
+                
+                if (coef1 == 0) {
+                    coef1 = 1
+                }
+                if (coef2 == 0) {
+                    coef2 = 1
+                }
+                
+                if (coef1sig == "-") {
+                    coef1 = coef1*-1
+                }
+                if (root1sig == "-") {
+                    root1 = root1*-1
+                }
+                if (coef2sig == "-") {
+                    coef2 = coef2*-1
+                }
+                if (root2sig == "-") {
+                    root2 = root2*-1
+                }
+                
+
+                console.log("coef1: "+coef1)
+                console.log("coefans1: "+coefans1)
+                console.log("coef2: "+coef2)
+                console.log("coefans2: "+coefans2)
+
+                console.log("root1: "+root1)
+                console.log("ans1: "+ans1)
+                console.log("root2: "+root2)
+                console.log("ans2: "+ans2)
+
+                if (document.getElementById("reply2").value==='' || document.getElementById("reply2").value===null) {
+                    document.querySelector("h2").textContent = `Input Invalid`
+                    
+                }
+                if (document.getElementById("reply4").value==="" || document.getElementById("reply4").value===null) {
+                    document.querySelector("h2").textContent = `Input Invalid`
+                    
+                }
+                else {
+                console.log(document.getElementById("reply2").value)
+                if (root1 == ans1){
+                    if (root2 == ans2) {
+                    if (coef1 == coefans1){
+                        if (coef2 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                        
+                    }
+                        else {
+                            document.querySelector("h2").textContent = `Incorrect!`
+                            streak = 0
+                            score --
+                            genQuest()
+                    }
+                }
+                    else if (coef1 == coefans2) {
+                        if (coef2 == coefans1) {
+                            document.querySelector("h2").textContent = ``
+                            streak ++
+                            score ++
+                            genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (coef2 == coefans1) {
+                    if (coef1 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else{
+                    document.querySelector("h2").textContent = `Incorrect!`
+                    streak = 0
+                    score --
+                    genQuest()
+                }
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                        
+                    }
+                    else {
+                        document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (root1 == ans2) {
+                    if (root2 == ans1) {
+                                        if (coef1 == coefans1){
+                    if (coef2 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                        
+                    }
+                    else {
+                        document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (coef1 == coefans2) {
+                    if (coef2 == coefans1) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                        document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (coef2 == coefans1) {
+                    if (coef1 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else{
+                    document.querySelector("h2").textContent = `Incorrect!`
+                    streak = 0
+                    score --
+                    genQuest()
+                }
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (root2 == ans1) {
+                    if (root1 == ans2) {
+                                        if (coef1 == coefans1){
+                    if (coef2 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                        
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (coef1 == coefans2) {
+                    if (coef2 == coefans1) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else if (coef2 == coefans1) {
+                    if (coef1 == coefans2) {
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                         document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else{
+                    document.querySelector("h2").textContent = `Incorrect!`
+                    streak = 0
+                    score --
+                    genQuest()
+                }
+                        document.querySelector("h2").textContent = ``
+                        streak ++
+                        score ++
+                        genQuest()
+                    }
+                    else {
+                        document.querySelector("h2").textContent = `Incorrect!`
+                        streak = 0
+                        score --
+                        genQuest()
+                    }
+                }
+                else{
+                    document.querySelector("h2").textContent = `Incorrect!`
+                    streak = 0
+                    score --
+                    genQuest()
+                }
+                }
+//<!--                if (ansArr.includes(root1)) {
+//<!--                    let index = ansArr.indexOf(root1);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    if (ansArr.includes(root2)) {
+//<!--                    let index = ansArr.indexOf(root2);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    window.alert("good")
+//<!--                    }
+//<!--                else {
+//<!--                        window.alert("Close, but not quite") 
+//<!--                    }
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                }
+//<!--                else if (ansArr.includes(root2)) {
+//<!--                    let index = ansArr.indexOf(root2);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    if (ansArr.includes(root1)) {
+//<!--                    let index = ansArr.indexOf(root1);
+//<!--                    ansArr.splice(index, 1);
+//<!--                    window.alert("good")
+//<!--                    }
+//<!--                    else {
+//<!--                        window.alert("Close, but not quite") 
+//<!--                    }
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                        
+//<!--                }
+//<!--                else {
+//<!--                    window.alert("too bad")
+//<!--                    ansArr.length = 0;
+//<!--                    genQuest()
+//<!--                }
+//<!--            }
+            }
+        </script>
+        
+    </body>
+</html>
