@@ -2,6 +2,48 @@
 <html lang = "en">
 
 <style>
+    header {
+    text-align: left;
+    }
+    footer {
+        text-align: left;
+        margin-bottom: -40px;
+        position: fixed;
+        padding: 0px 10px 0px 10px;
+        bottom: 0;
+        a {
+            color: #330533;
+        }
+        a:visited {
+            color: #330533;
+        }
+        a:hover, a:active {
+            color: #666647;
+        }
+    }
+    button {
+        background-color: #666647;
+        border-radius: 20px;
+        cursor: default;
+        border: none;
+        color: #330533;
+        padding: 20px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        width: 200px;
+    }
+
+    button:hover {
+        background-color: #ccbdad;
+        border-radius: 20px;
+        cursor: default;
+        border: none;
+        color: #330533;
+        padding: 20px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        width: 200px;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -152,6 +194,11 @@ a:hover, a:active {
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <a href="index.html">
+                <button>Retreat!</button>
+            </a>
+        </header>
         <h1 id="command">
             Find roots of: 
         </h1>
@@ -177,6 +224,10 @@ a:hover, a:active {
             <option value="fuck"><strong>F U C K</strong></option>
             
             </select>
+
+            <footer>
+                <h6 style="text-align: left;"><a style="text-decoration: none" href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+            </footer>
 
         <script>
             var r1Dec = 0
