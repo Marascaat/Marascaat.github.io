@@ -195,7 +195,7 @@ a:hover, a:active {
     </head>
     <body>
         <header>
-            <a href="index.html">
+            <a href="home.html">
                 <button>Retreat!</button>
             </a>
         </header>
@@ -206,7 +206,7 @@ a:hover, a:active {
         <h2>&nbsp;</h2>
         <h3></h3>
         <br> 
-            <p>(<select id="pneg05"  name="pneg05"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient1"  id="reply1" maxlength="1" required autofocus>X<select id="pneg1"  name="pneg1"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root1"  id="reply2" maxlength="1" required>)(<select id="pneg15"  name="pneg15"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient2"  id="reply3" maxlength="1" required>X<select id="pneg2"  name="pneg2"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root2" maxlength="1" id="reply4" >)
+            <p>(<select id="pneg05" onchange="pneg05()" name="pneg05" autofocus><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient1"  id="reply1" maxlength="1" required>X<select id="pneg1"  name="pneg1"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root1"  id="reply2" maxlength="1" required>)(<select id="pneg15"  name="pneg15"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient2"  id="reply3" maxlength="1" required>X<select id="pneg2"  name="pneg2"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root2" maxlength="1" id="reply4" >)
             <br><br>
             <input id="enter" type="button" value="Generate Question" onClick="checkAns()">
             <br><br>
@@ -250,6 +250,17 @@ a:hover, a:active {
             var olDiff
             var newDiff
 
+
+//<!--      const pneg05 = 
+//<!--      document.getElementById("pneg05");
+//<!--      textInput.addEventListener('keydown', (event) => {
+//<!--      if (event.key === '.') {
+//<!--      document.getElementById("reply1").focus();
+//<!--      }
+//<!--      else if (event.key === ',') {
+//<!--          document.getElementById("reply4").focus();
+//<!--      }
+//<!--      }); 
             newDiff = document.getElementById('difficulty').value
             console.log(newDiff)
             function fakyuu() {
