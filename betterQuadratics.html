@@ -12,13 +12,13 @@
         padding: 0px 10px 0px 10px;
         bottom: 0;
         a {
-            color: #330533;
+            color: #33053375;
         }
         a:visited {
-            color: #330533;
+            color: #33053375;
         }
         a:hover, a:active {
-            color: #666647;
+            color: #66664775;
         }
     }
     button {
@@ -203,17 +203,13 @@ a:hover, a:active {
             Find roots of: 
         </h1>
         <h1 id="quest"></h1>
-        <h2></h2>
+        <h2>&nbsp;</h2>
         <h3></h3>
-        <h4></h4>  
+        <br> 
             <p>(<select id="pneg05"  name="pneg05"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient1"  id="reply1" maxlength="1" required autofocus>X<select id="pneg1"  name="pneg1"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root1"  id="reply2" maxlength="1" required>)(<select id="pneg15"  name="pneg15"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Coefficient2"  id="reply3" maxlength="1" required>X<select id="pneg2"  name="pneg2"><option value="+" selected>+</option><option value="-">-</option><input type="value" name="Root2" maxlength="1" id="reply4" >)
-            <br>
-            <br>
+            <br><br>
             <input id="enter" type="button" value="Generate Question" onClick="checkAns()">
-            <br>
-            <br>
-            
-            <br>
+            <br><br>
             <label for="difficulty">Select Difficulty:</label>
             <br>
             <select id="difficulty" onchange="fakyuu()" name="difficulty" size="5">
@@ -226,7 +222,7 @@ a:hover, a:active {
             </select>
 
             <footer>
-                <h6 style="text-align: left;"><a style="text-decoration: none" href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+                <h6 style="text-align: left;"><a style="text-decoration: none" href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt;&copy; Marascaat&gt;&gt;&gt;</a></h6>
             </footer>
 
         <script>
@@ -355,8 +351,7 @@ a:hover, a:active {
                 
                 question = q1 * q2 + "X²" + " + " + (q1 * r2 + q2 * r1) + "X" + " + " + r1 * r2
 
-                document.querySelector("h3").textContent = 'score=' + score
-                document.querySelector("h4").textContent = 'streak=' + streak
+                document.querySelector("h3").textContent = 'score=' + score + ', streak=' + streak
                 document.getElementById('enter').onClick = null
                 document.getElementById('enter').value = "Enter";
                 document.getElementById("command").textContent = 'Find the Roots of:'
@@ -427,7 +422,7 @@ a:hover, a:active {
                     if (root2 == ans2) {
                     if (coef1 == coefans1){
                         if (coef2 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -442,7 +437,7 @@ a:hover, a:active {
                 }
                     else if (coef1 == coefans2) {
                         if (coef2 == coefans1) {
-                            document.querySelector("h2").textContent = ``
+                            document.querySelector("h2").textContent = '\xa0'
                             streak ++
                             score ++
                             genQuest()
@@ -456,7 +451,7 @@ a:hover, a:active {
                 }
                 else if (coef2 == coefans1) {
                     if (coef1 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -474,7 +469,7 @@ a:hover, a:active {
                     score --
                     genQuest()
                 }
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -491,7 +486,7 @@ a:hover, a:active {
                     if (root2 == ans1) {
                                         if (coef1 == coefans1){
                     if (coef2 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -506,7 +501,7 @@ a:hover, a:active {
                 }
                 else if (coef1 == coefans2) {
                     if (coef2 == coefans1) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -520,7 +515,7 @@ a:hover, a:active {
                 }
                 else if (coef2 == coefans1) {
                     if (coef1 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -538,7 +533,7 @@ a:hover, a:active {
                     score --
                     genQuest()
                 }
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -554,7 +549,7 @@ a:hover, a:active {
                     if (root1 == ans2) {
                                         if (coef1 == coefans1){
                     if (coef2 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -569,7 +564,7 @@ a:hover, a:active {
                 }
                 else if (coef1 == coefans2) {
                     if (coef2 == coefans1) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -583,7 +578,7 @@ a:hover, a:active {
                 }
                 else if (coef2 == coefans1) {
                     if (coef1 == coefans2) {
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
@@ -601,7 +596,7 @@ a:hover, a:active {
                     score --
                     genQuest()
                 }
-                        document.querySelector("h2").textContent = ``
+                        document.querySelector("h2").textContent = '\xa0'
                         streak ++
                         score ++
                         genQuest()
