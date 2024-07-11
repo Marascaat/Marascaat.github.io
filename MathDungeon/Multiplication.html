@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 
-    <style>
+<style>
     footer {
         text-align: left;
         margin-bottom: -40px;
@@ -17,7 +17,7 @@
         a:hover, a:active {
             color: #66664775;
         }
-}
+    }
 
 
 header {
@@ -79,8 +79,6 @@ input[type=button] {
     width:25%;
 }
 
-
-
 button {
     background-color: #666647;
     border-radius: 20px;
@@ -108,7 +106,6 @@ button:hover {
 
 
 
-
 a {
     color: black;
 }
@@ -118,14 +115,13 @@ a:visited {
 a:hover, a:active {
     color: rgb(50, 50, 50);
 }
-
-    </style>
+</style>
 
     <head>
         <meta charset = "UTF-8">
         <meta name = "author" content = "Marascaat">
-        <meta name = "description" content="division: crap">
-        <title> Division </title>
+        <meta name = "description" content="Practice Multiplication">
+        <title> Multiplication </title>
         <link rel="icon" href="ib.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +129,7 @@ a:hover, a:active {
     </head>
     <body>
         <header>
-            <a href="home.html">
+            <a href="MathDungeon.html">
                 <button>Retreat!</button>
             </a>
         </header>
@@ -155,8 +151,7 @@ a:hover, a:active {
         <script>
             var num1 = 0
             var num2 = 0
-            var dividend
-            var sign = '/'
+            var sign = '*'
             var question = " " + num1 + sign + num2
             var ans = 0
             var min = -20
@@ -179,14 +174,13 @@ a:hover, a:active {
                 if (num2 == 0) {
                     num2 = max
                 }
-                dividend = num1 * num2
-                ans = num2                
+                ans = num1 * num2                
               
-                if (num1 >= 0) {
-                    question = " " + dividend + sign + num1
+                if (num2 >= 0) {
+                    question = " " + num1 + sign + num2
                 }
                 else {
-                    question = " " + dividend + sign + "(" + num1 + ")"
+                    question = " " + num1 + sign + "(" + num2 + ")"
                 }
                 document.querySelector("h3").textContent = 'score=' + score
                 document.querySelector("h4").textContent = 'streak=' + streak
