@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <style>
+        * {
+            font-family: lumanosimo;
+            margin:0;
+            padding:0;
+        }
+        html {
+            background-color: #3c0921;
+        }
+        header {
+            font-size: 30px;
+            padding: 2% 2%;
+            left: 0;
+            top: 0;
+            background-color: #a8141d;
+            color: #270721;
+        }
+        .story {
+            text-wrap: wrap;
+            font-size: 30px;
+            background-color: #7d0f1f;
+            color: #130310;
+            padding: 10px 30px;
+            margin: 30px 30px;
+        }
+        .instruction {
+            text-wrap: wrap;
+            font-size: 30px;
+            background-color: #a8141d;
+            color: #270721;
+            padding: 5px;
+            margin: 0px 0px;
+        }
+        .row {
+            justify-content: center;
+            display: flex;
+            align-self: center;
+            flex-direction: row; 
+        }
+        .column {
+            font-size: 13px;
+            text-align: center;
+            background-color: #1d0518;
+            color: #d3181c;
+            margin: 60px 0px;
+            padding: 30px;
+            height: 125px;
+            white-space: nowrap;overflow: hidden;
+        }
+        input[type=value] {
+            font-size: 16px; 
+            border: 5px #130310;
+            border-radius: 2px;
+            text-align: center;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #3c0921;
+            color: #ff252b;
+            margin: 5px 0px;
+        }
+        footer {
+            padding: 0px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            color: #ff252b;
+            font-size: 30px;
+        }
+        a {
+            color: #ff252b;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #ff252b;
+        }
+        a:hover, a:active {
+            color:  #7d0f1f;
+        }
+    </style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="Wordle, but with MURDER">
+        <title></title>
+        <link rel="icon" href="murdle.png" type="image/x-icon">
+        <link rel="stylesheet" href = "murdle.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+        <h1>Solve the mystery</h1>
+        </header>
+
+        <div class="story">
+        <p>story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story </p>
+        </div>
+
+        <div class="instruction">Voila are some instructions. And more instructions yet. And more. AND MORE. MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE MORE 
+        </div>
+
+        <div class="quest">
+            
+            <div class="row">
+                <div class="column">
+                  <h2 style="font-family: monospace;">W h o</h2>
+                    <div class="who1">
+                        <input type="value" name="who" placeholder="" id="who11" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who12" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who13" value="" maxlength="1"/>
+                    </div>
+                    <div class="who2">
+                        <input type="value" name="who" placeholder="" id="who21" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who22" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who23" value="" maxlength="1"/>
+                          </div>
+                    <div class="who3">
+                        <input type="value" name="who" placeholder="" id="who31" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who32" value="" maxlength="1"/>
+                        <input type="value" name="who" placeholder="" id="who33" value="" maxlength="1"/>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h2 style="font-family: monospace;">W h e r e</h2>
+                    <div class="where1">
+                        <input type="value" name="where" placeholder="" id="where11" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where12" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where13" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where14" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where15" value="" maxlength="1"/>
+                    </div>
+                    <div class="where2">
+                        <input type="value" name="where" placeholder="" id="where21" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where22" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where23" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where24" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where25" value="" maxlength="1"/>
+                    </div>
+                    <div class="where3">
+                        <input type="value" name="where" placeholder="" id="where31" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where32" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where33" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where34" value="" maxlength="1"/>
+                        <input type="value" name="where" placeholder="" id="where35" value="" maxlength="1"/>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h2 style="font-family: monospace;">W h e n</h2>
+                        <div class="when1">
+                            <input type="value" name="when" placeholder="" id="when11" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when12" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when13" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when14" value="" maxlength="1"/>
+                        </div>
+                        <div class="when2">
+                            <input type="value" name="when" placeholder="" id="when21" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when22" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when23" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when24" value="" maxlength="1"/>
+                        </div>
+                        <div class="when3">
+                            <input type="value" name="when" placeholder="" id="when31" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when32" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when33" value="" maxlength="1"/>
+                            <input type="value" name="when" placeholder="" id="when34" value="" maxlength="1"/>
+                        </div>
+                </div>
+
+                <div class="column">
+                    <h2 style="font-family: monospace;">W h a t ?</h2>
+                        <div class="what1">
+                            <input type="value" name="what" placeholder="" id="what11" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what12" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what13" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what14" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what15" value="" maxlength="1"/>
+                        </div>
+                        <div class="what2">
+                            <input type="value" name="what" placeholder="" id="what21" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what22" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what23" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what24" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what25" value="" maxlength="1"/>
+                        </div>
+                        <div class="what3">
+                            <input type="value" name="what" placeholder="" id="what21" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what22" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what23" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what24" value="" maxlength="1"/>
+                            <input type="value" name="what" placeholder="" id="what25" value="" maxlength="1"/>
+                        </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <footer>
+            <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+        </footer>
+
+        <script>
+        </script>
+    </body>
+</html>
