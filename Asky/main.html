@@ -89,14 +89,6 @@ height: 300px;
     color: #124e89;
 }
 
-.canCon {
-    text-align: center;
-}
-canvas {
-    margin: 10px;
-    background-color: #124e89;
-}
-
 button {
     background-color: #c0cbdc;
     font-size: 15px;
@@ -123,19 +115,19 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    color: #0099db75;
+    color: #c0cbdc;
     font-size: 40px;
     margin: -0px 0px;
     }
     a {
-        color: #0099db75;
+        color: #c0cbdc;
         text-decoration: none;
     }
     a:visited {
-    color: #0099db75;
+    color: #c0cbdc;
     }
     a:hover, a:active {
-    color:  #124e8975;
+    color:  #0099db;
     }
 
 </style>
@@ -173,8 +165,10 @@ footer {
             <input type="file" id="input" name="image" accept="image/png, image/jpeg, image/gif" onchange="update()"/>
         </div>
 
-        <div class="canCon">
-        <canvas id="output" width="100" height="100">Problem loading canvas</canvas>
+        <div class="output">
+            <p1>
+
+            </p1>
         </div>
 
         <div class="parameters">     
@@ -236,29 +230,6 @@ footer {
         <script>
             var input
             function update() {
-                console.log(input)
-                input = document.getElementById("input").files[0];
-                if (document.getElementById("size").value == "smallest") {
-                    console.log("smallest")
-                    document.getElementById("output").width = "100"
-                    document.getElementById("output").height = "100"
-                }
-                else if (document.getElementById("size").value == "small") {
-                    document.getElementById("output").width = "200"
-                    document.getElementById("output").height = "200"
-                }
-                else if (document.getElementById("size").value == "medium") {
-                    document.getElementById("output").width = "300"
-                    document.getElementById("output").height = "300"
-                }
-                else if (document.getElementById("size").value == "large") {
-                    document.getElementById("output").width = "400"
-                    document.getElementById("output").height = "400"
-                }
-                else if (document.getElementById("size").value == "largest") {
-                    document.getElementById("output").width = "500"
-                    document.getElementById("output").height = "500"
-                }
             }
         </script>
     </body>
