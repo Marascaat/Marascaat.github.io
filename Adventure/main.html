@@ -2,11 +2,14 @@
 <html lang = "en">
     <style>
         html {
+            font-family: "Kode Mono", monospace;
             text-align: center;
             background-color: #b8c2b9;
         }
         .title {
-            font-size: 40px;
+            margin-top: -50px;
+            margin-bottom: -50px;
+            font-size: 30px;
         }
         
         .output {
@@ -20,10 +23,10 @@
             color: #6344ed;
             border: 2px solid #6344ed;
         }
+        
         .input {
-            margin: auto;
-            margin: 0px;
-            font-size: 15px;
+            margin: auto;          
+            font-size: 20px;
             font-family: monospace;
             text-align: left;
             width:400px;
@@ -32,7 +35,18 @@
             color: #FFFFFF;
             border: 2px solid #FFFFFF;
         }
-    </style>
+        input[type=value] {
+            width: 309px;
+            font-family: monospace;
+            font-size: 20px;
+            outline: orange solid 0px;
+            border: 0px solid orangered;
+            background-color: #1e1e1e;
+            caret-color: #FFFFFF;
+            color: #FFFFFF;
+        }
+        
+        </style>
 
     <head>
         <meta charset = "UTF-8">
@@ -40,24 +54,80 @@
         <meta name = "description" content="A choose-your-own-adventure game'">
         <title>Adventure v2</title>
         <link rel="icon" href="/icons/lira.png" type="image/x-icon">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <div class="title">
-        <h1>Sup world</h1>
+        <h1><strong>Prepare to adventure!</strong></h1>
         </div>
 
         <div id="output" class="output">
             <!--132 characters across-->
-            <!---->
+            <!--50 characters about-->
+            <!--66:25-->
             <p1>
                 123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910
+                2 <br>
+                3 <br>
+                4 <br>
+                5 <br>
+                6 <br>
+                7 <br>
+                8 <br>
+                9 <br>
+                10 <br>
+                11 <br>
+                12 <br>
+                13 <br>
+                14 <br>
+                15 <br>
+                16 <br>
+                17 <br>
+                18 <br>
+                19 <br>
+                20 <br>
+                21 <br>
+                22 <br>
+                23 <br>
+                24 <br>
+                25 <br>
+                26 <br>
+                27 <br>
+                28 <br>
+                29 <br>
+                30 <br>
+                31 <br>
+                32 <br>
+                33 <br>
+                34 <br>
+                35 <br>
+                36 <br>
+                37 <br>
+                38 <br>
+                39 <br>
+                40 <br>
+                41 <br>
+                42 <br>
+                43 <br>
+                44 <br>
+                45 <br>
+                46 <br>
+                47 <br>
+                48 <br>
+                49 <br>
+                50 <br>
+                
             </p1>
         </div>
         <br>
         <br>
         <div id="input" class="input">
-            <p1>input</p1>
+            <p1>input:</p1>
+            <input type="value" id="chosen" autofocus>
         </div>
         <script>  
             var character = "stranger"
