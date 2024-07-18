@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <style>
+        html {
+            text-align: center;
+            background-color: #b8c2b9;
+        }
+        .title {
+            font-size: 40px;
+        }
+        
+        .output {
+            margin: auto;
+            font-size: 10px;
+            font-family: monospace;
+            text-align: center;
+            width:800px;
+            height:600px;
+            background-color: #1e1e1e;
+            color: #6344ed;
+            border: 2px solid #6344ed;
+        }
+        .input {
+            margin: auto;
+            margin: 0px;
+            font-size: 15px;
+            font-family: monospace;
+            text-align: left;
+            width:400px;
+            height:200px;
+            background-color: #1e1e1e;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+        }
+    </style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="A choose-your-own-adventure game'">
+        <title>Adventure v2</title>
+        <link rel="icon" href="/icons/lira.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="title">
+        <h1>Sup world</h1>
+        </div>
+
+        <div id="output" class="output">
+            <!--132 characters across-->
+            <!---->
+            <p1>
+                123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910
+            </p1>
+        </div>
+        <br>
+        <br>
+        <div id="input" class="input">
+            <p1>input</p1>
+        </div>
+        <script>  
+            var character = "stranger"
+            
+            if (character == "lowlife") {
+                document.getElementById("output").style.color = "#c65339";
+                document.getElementById("output").style.backgroundColor = "1e1e1e1e";
+                document.getElementById("output").style.border = "2px solid #c65339";
+            }
+            else if (character == "runaway") {
+                document.getElementById("output").style.color = "#6344ed";
+                document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                document.getElementById("output").style.border = "2px solid #6344ed";
+            }
+            else if (character == "stranger") {
+                document.getElementById("output").style.color = "#6bc44c";
+                document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                document.getElementById("output").style.border = "2px solid #6bc44c";
+            }
+        </script>
+    </body>
+</html>
