@@ -4,13 +4,18 @@
         html {
             font-family: "Kode Mono", monospace;
             text-align: center;
-            background-color: #b8c2b9;
+            background-color: #1e1e1e;
         }
         .title {
-            color: green;
-            margin-top: -30px;
-            margin-bottom: -30px;
+            color: #6bc44c;
             font-size: 30px;
+            .left {
+
+            }
+            .right {
+                margin-top: -30px;
+                margin-bottom: -30px;
+            }
         }
 
         .game {
@@ -20,6 +25,7 @@
         .output {
             /** margin: auto; **/
             margin-right: 10px;
+            margin-bottom: 10px;
             float: left;
             font-size: 10px;
             font-family: monospace;
@@ -89,7 +95,25 @@
             color: #FFFFFF;
         }
         
-        
+        footer {
+            padding: 0px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            color: #c0cbdc;
+            font-size: 40px;
+            margin: -40px 40px;
+            }
+            a {
+                color: #6bc44c;
+                text-decoration: none;
+            }
+            a:visited {
+            color: #6bc44c;
+            }
+            a:hover, a:active {
+            color:  #FFFFFF;
+            }
         </style>
 
     <head>
@@ -103,10 +127,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     </head>
-
     <body>
         <div class="title">
+        <div class="left">
+            <a href="/index.html">Return to the Wonderworks</a>
+        </div>
+        <div class="right">
         <h1><strong>Prepare to ADVENTURE!</strong></h1>
+        </div>
         </div>
 
     <div class="game">
@@ -189,6 +217,11 @@
         </div>
         </div>
     </div>
+
+
+        <footer>
+            <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+        </footer>
 
         <script>  
             var character = "stranger"
