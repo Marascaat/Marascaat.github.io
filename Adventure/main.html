@@ -148,7 +148,8 @@
         </div>
         </div>
 
-    <div class="game">
+        <!-- GAME -->
+        <div class="game">
         <div id="output" class="output">
             <!--132 characters across-->
             <!--50 characters about-->
@@ -215,6 +216,10 @@
         <div class="story">
             <p1 id="histoire">Story: story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story story </p1>
         </div>
+        <div id="input" class="input">
+            <p1>input:</p1>
+            <input type="value" id="chosen" maxlength="1" autofocus onchange onpropertychange onkeyup onpaste oninput="chosen()">
+        </div>
         <div class="options">
             <p1>OPTIONS:</p1>
             <br>
@@ -227,19 +232,15 @@
             <br><br>
             <p1 id="opt4">OPTION4</p1>
         </div>
-        <div id="input" class="input">
-            <p1>input:</p1>
-            <input type="value" id="chosen" maxlength="1" autofocus onchange onpropertychange onkeyup onpaste oninput="chosen()">
         </div>
         </div>
-    </div>
 
         <footer>
             <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
         </footer>
 
         <script>  
-            var character = "placeholder"
+        var character = "placeholder"
             var page = 1
             var chapter = 1
             var choice
@@ -273,14 +274,17 @@
                     if (choice == 1) {
                         character = "lowlife"
                         c1p2()
+                        page++
                     }
                     else if (choice == 2) {
                         character = "runaway"
                         c1p2()
+                        page++
                     }
                     else if (choice == 3) {
                         character = "stranger"
                         c1p2()
+                        page++
                     }
                     //character selection
                         if (character == "lowlife") {
