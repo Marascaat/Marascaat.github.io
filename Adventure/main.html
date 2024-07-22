@@ -132,11 +132,14 @@
         <meta charset = "UTF-8">
         <meta name = "author" content = "Marascaat">
         <meta name = "description" content="A Choose-your-own-adventure game with fun new graphics">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
         <title>Adventure v2</title>
         <link rel="icon" href="/icons/lira.png" type="image/x-icon">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="title">
@@ -149,6 +152,7 @@
         </div>
 
         <!-- GAME -->
+         <!-- Max width = 1252 -->
         <div class="game">
         <div id="output" class="output">
             <!--132 characters across-->
@@ -244,6 +248,8 @@
             var page = 1
             var chapter = 1
             var choice
+            //var w = window.innerWidth;
+            //console.log(w)
 
             document.getElementById("chosen").focus(); 
 
