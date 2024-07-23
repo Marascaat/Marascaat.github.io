@@ -92,6 +92,40 @@
         a:hover, a:active {
             color:  #ac6b266f;
         }
+
+
+
+        table {
+            width: 75%;
+            margin: auto;
+            
+            td {
+                text-align: center;
+                button {
+                    font-family: "Kode Mono", monospace;
+                    font-size: 30px;
+
+                    border: 10px solid #331c17;
+                    border-radius: 5px;
+                    background-color: #331c17;
+                    color: #ac6b26;
+                    width: 300px;
+                    height: 150px;
+                    transition: background-color 0.5s, border-radius 0.5s, height 0.5s, margin 0.5s;
+                    
+                    
+                }
+                button:hover {
+                    margin: 5px 0px;
+                    border: 10px solid #331c17;
+                    background-color: #563226;
+                    border-radius: 20px;
+                    height: 140px;
+                    
+                }
+            }
+        }
+
     </style>
 
     <head>
@@ -118,6 +152,7 @@
             <h1><strong>Welcome Marascaat's Wonderworks</strong></h1>
         </div>
 
+        <!--
         <div class="container">
         <a href="MathDungeon/Home.html"><div class="box">
             MathDungeon    
@@ -136,8 +171,32 @@
         </div></a>
 
         </div>
+        -->
 
-        </div>
+        <table cellspacing="20">
+            <tr>
+                <td>
+                    <a href="MathDungeon/Home.html">
+                        <button><strong>Math<br>Dungeon</strong></button>
+                    </a>
+                </td>
+                <td>
+                    <a href="Asky/main.html">
+                        <button><strong>ASCII Art Generator (coming soon)</strong></button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="Murdle/murdle.html">
+                        <button><strong>Murdle (coming soon)</strong></button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/Adventure/main.html"><button><strong>Adventure (In Developement)</strong></button></a>
+                </td>
+            </tr>
+        </table>
 
         <footer>
             <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
