@@ -1,18 +1,68 @@
 <!DOCTYPE html>
 <html lang = "en">
+
+    <style>
+        :root {
+            --headheight: 50px
+        }
+        body {
+            height: 100vh;
+            margin: 0px;
+            padding:0;
+            background-color: green;
+            font-family: 'Courier New', monospace;
+        }
+        .toptitle {
+            margin: -22px 0px;
+            background-color: black;
+            color: white;
+            width: 100%;
+            height: var(--headheight);
+        }
+        .sidebar {
+            margin-top: calc(var(--headheight)/2);
+            float: left;
+            width: 25%;
+            color: aquamarine;
+            text-align: center;
+        }
+        .content {
+            padding-left: 5%;
+            position: absolute;
+            margin-left:25%;
+            margin-top: 22px;
+            width: 75%;
+            height: 100%;
+            background-color: bisque;
+        }
+    </style>
+
+
     <head>
         <meta charset = "UTF-8">
         <meta name = "author" content = "Marascaat">
-        <meta name = "description" content="Placeholder'">
-        <title></title>
-        <link rel="icon" href="ib.png" type="image/x-icon">
-        <link rel="stylesheet" href = "" type="text/css">
+        <meta name = "description" content="My very own blog!">
+        <title>Pretentious Pensations</title>
+        <link rel="icon" href="/icons/ignore.png" type="image/x-icon">
         
     </head>
 
     <body>
-        <h1>HELLO WORLD this shall be a blog</h1>
+        <div class="toptitle">
+            <h1>HELLO WORLD this shall be a blog</h1>
+        </div>
         
+        <div class="sidebar">
+            <a href="#" class="sidebutton">Potats</a>
+            <br><br>
+            <a href="#" class="sidebutton">Cacters</a>
+            <br><br>
+            <a href="#" class="sidebutton">Flers</a>
+        </div>
+
+        <div class="content">
+            <p1>The colors are garish, but then again so is the code!</p1>
+        </div>
         
         
         <script>
