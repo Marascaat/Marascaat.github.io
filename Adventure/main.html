@@ -39,7 +39,7 @@
             font-size: 10px;
             font-family: monospace;
             text-align: center;
-            /** **/  width:800px; 
+            /** width:800px; **/
             /**  height:600px; **/
             background-color: #1e1e1e;
             color: #ffffff;
@@ -56,7 +56,7 @@
             font-size: 20px;
             font-family: monospace;
             text-align: center;
-            width:350px;
+             width:350px;
             /** height:30px; **/
             background-color: #1e1e1e;
             color: #FFFFFF;
@@ -835,8 +835,8 @@
                         document.getElementById("opt3").innerText = ""
                         document.getElementById("opt4").innerText = ""
 
+
                         expected ++
-                        
                         if (index.length != expected) {
                             index.push(0)
                         }
@@ -845,10 +845,22 @@
                 }
         
                 if (index.length == 3) {
-                    if (index[1] == 1) {
-                        document.getElementById("opt1").innerText = "AAAAAAAAAAAAAAAAAAAA"
+                    if (choice != 0) {
+                        document.getElementById("opt1").innerText = "AAAAAAAAAAAAAAAAAA"
+                    document.getElementById("opt2").innerText = "AAAAAAAAAAAAAAAAAA"
+                    document.getElementById("opt3").innerText = "AAAAAAAAAAAAAAAAAA"
+                    document.getElementById("opt4").innerText = "AAAAAAAAAAAAAAAAAA"
+                    if (index.length != expected) {
+                            index.push(0)
+                        }
+                        choice = 0
                     }
                 }
+                
+                if (index.length == 4) {
+                    
+                }
+            
             }
 
         </script>
