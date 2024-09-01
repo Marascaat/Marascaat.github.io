@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <style>
+        html {
+            font-family: "Kode Mono", monospace;
+            text-align: center;
+            background-color: #1e1e1e;
+        }
+        .title {
+            margin:auto;
+            color: #FFFFFF;
+            
+            .left {
+                
+                font-size: 30px;
+                margin-top: -38px;
+                margin-bottom: -25px;
+                margin-left: 50px;
+                float:left;
+            }
+            .right {
+                align-self: baseline;
+                font-size: 10px;
+                float: left;
+                margin-right: 75px;
+                margin-left: 8px;
+            }
+        }
+
+        .game {
+            margin:auto;
+            margin: 0px 0px;
+        .output {
+            /** margin: auto; **/
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            float: left;
+            font-size: 10px;
+            font-family: monospace;
+            text-align: center;
+            /** width:800px; **/
+            /**  height:600px; **/
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+        .small {
+            float:left;
+            margin-right: 0px;
+        .story {
+            text-wrap: balance;
+            padding: 2px 10px;
+            margin-bottom: 10px;
+            align-content: center;
+            font-size: 20px;
+            font-family: monospace;
+            text-align: center;
+             width:350px;
+            /** height:30px; **/
+            background-color: #1e1e1e;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            margin-right:0px;
+        }
+        .options {
+            text-wrap: balance;
+            padding: 2px 10px;
+            margin-bottom: 10px;
+            align-content: center;
+            font-size: 20px;
+            font-family: monospace;
+            text-align: left;
+            width:350px;
+            background-color: #1e1e1e;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            margin-right: 0px;
+        }
+        .input {
+            /** margin: auto; **/  
+            padding: 2px 10px;
+            margin-bottom: 10px;
+            
+            align-content: center;
+            font-size: 20px;
+            font-family: monospace;
+            text-align: left;
+            width:350px;
+            height:30px;
+            background-color: #1e1e1e;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            margin-right: 0px;
+        }
+
+        @media screen and (max-width: 1204px) {
+            .story, .options, .input {
+                width: 780px;
+            }
+        }
+    
+    }
+    }
+
+        input[type=value] {
+            margin-left: -15px;
+            width: 39px;
+            font-family: monospace;
+            font-size: 20px;
+            outline: orange solid 0px;
+            border: 0px solid orangered;
+            background-color: #1e1e1e;
+            caret-color: #FFFFFF;
+            color: #FFFFFF;
+        }
+
+        footer {
+            padding: 0px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            color: #c0cbdc;
+            font-size: 30px;
+            margin: -50px 5px;
+            }
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            a:visited {
+            color: #FFFFFF;
+            }
+            a:hover, a:active {
+            color:  #6bc44c;
+            }
+    </style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="A Choose-your-own-adventure game with fun new graphics">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <title>Adventure v2</title>
+        <link rel="icon" href="/icons/lira.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <!-- THE TITLE FUCKS UP THE ZOOM OH MY GOD WHYYYYYYYY
+        
+        <div class="title">
+        <div class="left">
+            <h1><strong>Prepare to ADVENTURE!</strong></h1>
+        </div>
+        <div class="right">
+            <h1><a href="/index.html">Return to the Wonderworks</a></h1>
+        </div>
+        </div>
+
+        
+        -->
+
+
+        <!-- GAME -->
+         <!-- Max width = 1252 -->
+        <div class="game">
+        <div id="output" class="output">
+            <!--132 characters across-->
+            <!--50 characters about-->
+            <!--66:25-->
+            <!--(this will be the live renderer) <p1 is="putOut">
+                123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910
+                2 <br>
+                3 <br>
+                4 <br>
+                5 <br>
+                6 <br>
+                7 <br>
+                8 <br>
+                9 <br>
+                10 <br>
+                11 <br>
+                12 <br>
+                13 <br>
+                14 <br>
+                15 <br>
+                16 <br>
+                17 <br>
+                18 <br>
+                19 <br>
+                20 <br>
+                21 <br>
+                22 <br>
+                23 <br>
+                24 <br>
+                25 <br>
+                26 <br>
+                27 <br>
+                28 <br>
+                29 <br>
+                30 <br>
+                31 <br>
+                32 <br>
+                33 <br>
+                34 <br>
+                35 <br>
+                36 <br>
+                37 <br>
+                38 <br>
+                39 <br>
+                40 <br>
+                41 <br>
+                42 <br>
+                43 <br>
+                44 <br>
+                45 <br>
+                46 <br>
+                47 <br>
+                48 <br>
+                49 <br>
+                50 <br>
+                
+            </p1>
+        -->
+            <p1 id="outext">
+                <!--
+                    <body><strong>....................................................................................................................................<br />....................................................................................................................................<br />.............................................................................................................,,:;+*+;;;;;::;,,,,,:::<br />..................;*????????**********?**??*??*****??*+*+*+..............................................:;*%%$$$$%$$$$$$%***?$$$$$$<br />...................,:+*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?;..........................................,;?%$$$$$$$$%?+;;;;;*?++;;*$$$$<br />.........................,,::;+;:+*?%%%$%??%$$$%%?+*+;;,..........................................,:?%$$$$$$%%$$$$%**+;+?%+,...+$$$$<br />**;...................................,,,...,;;,,................................................:+*%$$$$$$+,:++;+;?$%%?+,....;$$$$$<br />$$$?+,............................................................................................;?$$$$%*,.....:**+++:......:%$$$$$<br />$$$$$%;..........................................................................................?$$%%+;,..,:;*++::;;........*$$$$$$<br />$$$$$$$;........................................................................................:?++*?:.,:+;:,.,;+;,..,......?$$$$$$<br />$$$$$$$$%;........................................................................................::;,::....;+??:..:;:......:$$$$$$$<br />$$$$$$$$%%:......................................................................................,,?%.,:...:;*?;..,;:.......*$$$$$$$<br />$$$$$$$$%?+...............,,.......................................................................*;......;*;..:**,........,%$$$$$$<br />$$$$$$$$$%;................,;;,...........................................................................,;...??:..........;$?%%%%?<br />$$$$$$$$$%+:................:++,..............................................................................+?........:??+%$+;;*+,<br />$$$$$$$$%%?*;....,,...........................................................................................,.........:%$$$$$%%*::<br />$$$$$$$$$;.............................................................................................................:%$$$$$$$$?*;<br />$$$$$$$*;:.................................................;,;:........................................................*$$$$$$$%%*,.<br />*;+?%%%%+.................................................,%%$$?+.....................................................+$$$$$$$$%?*..<br />.....,,,,................................................;$%$$$%%??,.................................................+$$$$$$$$$$$%*.<br />........................................................**$$$$$$$$$%;,...........::..................................?$$$$$$$$$?:,,.<br />......................................................,?$$$$$$$$$$$$$%,..............................................:%$$$$$$$$*....<br />......................................................*$$$$$$$$$$$$$$$+........;+;;...................................*%$$$$$$*.....<br />....................................................,,%$$$$$$$$$$$$$$$$;..,.,+?$%:,....................................,?$$$*:......<br />................................................,..,+*$$$$$$$$$$$$$$$$$$+*%?%$$%?*;,....................................?$$$+.......<br />...............................:............:????+,:$$$$$$$$$$$$$$$$$$$$$$%+:,,.........................................+$$%,.......<br />..............................................;%$$%*%$$$$$$$$$$$$$$$$$$$$?,...........................................:?%$$$;.......<br />...............................................:%$$$$$$$$$$$$$$$$$$$$$$$%,...,,,..........*;.........................;%$$$$$:.......<br />....................................,??+........+$$$$$$$$$$$$$$$$$$$$$$$*....:?+........,.:,........................,%$$$$$%:.......<br />..............................++......,..........%$$$$$$$$$$$$$$$$$$$$$%:............................................*$?*+:.........<br />..............................;$;................+$$$$$$$$$$$$$$$$$$$$$*............................................;%?;............<br />...............................+?;...............,%$$$$$$$$$$$$$$$$$$$$?,...................:**+**?%?***?%???*,.,:;*%%,.............<br />.................................:.,..............%$$$$$$$$$$$$$$$$$$%++*...++;;,........:+?$$$$$$$$$$$$$$$$$$%%%$$$$$;.............<br />...................................:*++;;+*??*,.,*$$$$$$$$$$$$$$$$$$$:..*?,.?$$$$%?*++**%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$;.............<br />....................................:+%$$$$$$$%?%$$$$$$$$$$$$$$$$$%%$*..;%?.,%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*..............<br />..............................:,,,,+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%;%$*,...,,?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?...............<br />..............................+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%$%%;.....+$$$$$$$$$$$$$$$$$$$$$$$$%%%$$$$$$$$$$$?:................<br />.............................,;*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*:......?$$$$$$$$$$$$$$$$$$$$%;+*:,,;%$$$$%**+:..................<br />..................................:*%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$;:,....,?$$$$$$$$$$$$$$$$$%?**;;++:...;%$%+,......................<br />..................................,:+?%%$$$$$$$$$$$$$$$$$$$$$$$$$$:.....;%$$$$$$$$$$$$$$$$*:,............,,,..,:,...................<br />......................................:%$$$$$$$$$$$$$$$$$$$$$$$%%*....;%$$$$$$$$$$$$$$$$?*;::,,,................,,::................<br />....................................,::;+$$$$$$$$$$$$$$$$$$$$$*,...,;?$$$$$$$$$$$$$$$$$*...........,:,..............................<br />.........................................:*%$$$$$$$$$$$$$$%%%%;..:*%$$$$$$$$$$$$$$$$?:,,.,,.............,...........................<br />............................................:*$$$$$$$$$$$$;...:*%$$$$$$$$$$$$$$$$$?+................................................<br />..............................................,;?%$%$$$$$$%*;:?$$$$$$$$$$$$$$%%*+,..................................................<br />..................................................,,:;*%%%%$$$%$$$$$$$%%?**+:,......................................................<br />.........................................................,,::,,,::;;:,..............................................................<br />....................................................................................................................................<br />....................................................................................................................................<br />....................................................................................................................................<br /></h1></strong>
+                -->
+            </p1>
+    </div>
+        <div class="small">
+
+        <div class="story">
+            <strong><p1 id="histoire">Welcome! Press any button to start your Adventure!</p1></strong>
+        </div>
+        <div id="input" class="input">
+            <p1>Input (number of option):</p1>
+            <input type="value" id="chosen" maxlength="1" autofocus onchange onpropertychange onkeyup onpaste oninput="chosen()">
+        </div>
+        <div class="options">
+            <p1 id="opt"></p1>
+            <br>
+            <br>
+            <p1 id="opt1"></p1>
+            <br><br>
+            <p1 id="opt2"></p1>
+            <br><br>
+            <p1 id="opt3"></p1>
+            <br><br>
+            <p1 id="opt4"></p1>
+        </div>
+        </div>
+        </div>
+
+        <footer>
+            <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+        </footer>
+
+
+        <!-- Old useless and stupid code
+        <script>  
+            var story = []
+            var character = "placeholder"
+            var page = 1
+            var chapter = 1
+            var choice
+            var w = window.innerWidth;
+            console.log(w)
+
+            document.getElementById("chosen").focus(); 
+
+
+            if (chapter == 1) {
+                if (page == 1) {
+                    c1p1()
+                }   
+            }
+
+            //ACTIVE
+            function chosen() {
+                choice = document.getElementById("chosen").value
+                document.getElementById("chosen").value = ""
+
+
+                if (chapter == 1) {
+
+                    if (page == 1) {
+                        if (choice == 1) {
+                            character = "lowlife"
+                            c1p2()
+                            page++
+                            story.push(character)
+                        }
+                        else if (choice == 2) {
+                            character = "runaway"
+                            c1p2()
+                            page++
+                            story.push(character)
+                        }
+                        else if (choice == 3) {
+                            character = "stranger"
+                            c1p2()
+                            page++
+                            story.push(character)
+                        }
+                        //character selection
+                        if (character == "lowlife") {
+                            document.getElementById("output").style.color = "#c65339";
+                            document.getElementById("output").style.backgroundColor = "1e1e1e1e";
+                            document.getElementById("output").style.border = "2px solid #c65339";
+                        }
+                        else if (character == "runaway") {
+                            document.getElementById("output").style.color = "#6344ed";
+                            document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                            document.getElementById("output").style.border = "2px solid #6344ed";
+                        }
+                        else if (character == "stranger") {
+                            document.getElementById("output").style.color = "#6bc44c";
+                            document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                            document.getElementById("output").style.border = "2px solid #6bc44c";
+                        }
+                }
+
+                    else if (page == 2) {
+                        if (choice == 1) { story.push("liquer")
+                            liquer()
+                            page++
+                        }
+                        else if (choice == 2) { story.push("cocktail")
+                            cocktail()
+                            page++
+                        }
+                        else if (choice == 3) { story.push("coffee")
+                            coffee()
+                            page++
+                        }   
+                    }
+
+                    else if (page == 3) {
+                        if (story.includes("liquer", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife liquer")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("runaway liquer")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("stranger liquer")
+                            }
+                            }
+                        else if (story.includes("cocktail", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife cocktail")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c1p4()
+                                page++
+                                //window.alert("runaway cocktail")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                if (choice == 1) {
+                                page++
+                                story.push("quiet")
+                                c1p4()
+                            }
+                                else if (choice == 2) {
+                                story.push("insult")
+                                c1p4()
+                                page++
+                                
+                            }
+                                else if (choice == 3) {
+                                story.push("attack")
+                                c1p4()
+                                page++
+                                
+                            }
+
+                                //window.alert("stranger cocktail")
+                            }
+                        }
+                        else if (story.includes("coffee", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife lowlife")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("runaway lowlife")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("stranger lowlife")
+                            }
+                        }
+                    }
+
+                    else if (page == 4) {
+                        if (story.includes("liquer", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife liquer")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("runaway liquer")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("stranger liquer")
+                            }
+                        }
+                        else if (story.includes("cocktail", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife cocktail")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("runaway cocktail")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                if (story.includes("quiet", 2)) {
+                                    c2p1()
+                                    chapter ++
+                                    page = 1
+                                }
+                                else if (story.includes("attack")) {
+                                    c1ps()
+                                    page ++
+                                }
+                            
+                            
+                            //window.alert("stranger cocktail")
+                        }
+                        }
+                        else if (story.includes("coffee", 1)) {
+                            if (story.includes("lowlife", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("lowlife lowlife")
+                            }
+                            if (story.includes("runaway", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("runaway lowlife")
+                            }
+                            if (story.includes("stranger", 0)) {
+                                c2p1()
+                                page = 1
+                                chapter ++
+                                //window.alert("stranger lowlife")
+                            }
+                        }
+                    }
+                
+                    else if (page == 5) {
+                        c2p1()
+                        page = 1
+                        chapter ++
+                    }
+
+                    else if (page == 6) {
+                        c2p1()
+                        page = 1
+                        chapter =2
+                    }
+
+                else if (chapter == 2) {
+                    //clean up story
+                    if (page == 1) {
+                        if (story.includes("quiet",2) || story.includes("insult",2) || story.includes("attack",2)) {
+                        window.alert("includes")
+                        window.alert(story)
+                        }
+                        else {
+                            window.alert("including")
+                            story.push("none")
+                            window.alert(story)
+                        }
+                    }
+                    
+                }
+            }
+            //window.alert(story)
+            }
+
+            //STATIC
+            function c1p1() {
+                document.getElementById("histoire").innerText = "Welcome! Choose your Character!"
+
+                document.getElementById("opt1").style.color = "#c65339";
+                document.getElementById("opt1").innerText = "1. THE LOWLIFE: A thug who grew up having to fend for himself in the criminal underworld. His rough upbringing has taught him to do anything to survive, and he is skilled in theft and evasion."
+
+                document.getElementById("opt2").style.color = "#6344ed";
+                document.getElementById("opt2").innerText = "2. THE RUNAWAY: A runaway of noble descent, she is looking to make her own way in life. Due to her noble upbringing, she is very good at persuading people to do her bidding."
+                
+                document.getElementById("opt3").style.color = "#6bc44c";
+                document.getElementById("opt3").innerText = "3. THE STRANGER: A newcomer to the town, their identity is shrouded in mystery. Though their leather belt and dark silk cape hint at a noble lineage, the worker's boots and the hunting knife strapped to their belt hint that they have not spent their life safe inside a mansion."
+                
+                document.getElementById("opt4").innerText = ""
+            }
+
+            function c1p2() {
+                document.getElementById("histoire").innerText = "The time is midday. You enter a bar and walk up to the counter. What do you order?"
+
+                document.getElementById("opt1").style.color = "#ffffff";
+                document.getElementById("opt1").innerText = "1. Hard Liquer"
+
+                document.getElementById("opt2").style.color = "#ffffff";
+                document.getElementById("opt2").innerText = "2. Light Cocktail"
+
+                document.getElementById("opt3").style.color = "#ffffff";
+                document.getElementById("opt3").innerText = "3. Strong Coffee"
+
+            }
+
+            function liquer() {
+                if (character == "runaway") {
+                    document.getElementById("histoire").innerText = "You are not used to such a stiff drink. You feel a bit tipsy"
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "lowlife") {
+                    document.getElementById("histoire").innerText = "You feel refreshed, and more confidant"
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "stranger") {
+                    document.getElementById("histoire").innerText = "You feel refreshed, and more confidant"
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+            }
+            function cocktail() {
+                if (character == "runaway") {
+                    document.getElementById("histoire").innerText = "The fancy drink reminds you of home."
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "lowlife") {
+                    document.getElementById("histoire").innerText = ""
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "stranger") {
+                    document.getElementById("histoire").innerText = "You hear a derisive laugh. A man by the bar says 'Enjoying your little lady's drink?' \n\nDo you:"
+                    document.getElementById("opt1").innerText = "1. Hold your tounge"
+                    document.getElementById("opt2").innerText = "2. Insult the thug"
+                    document.getElementById("opt3").innerText = "3. Attack the thug"
+                    document.getElementById("opt4").innerText = ""
+                }
+            }
+            function coffee() {
+                if (character == "runaway") {
+                    document.getElementById("histoire").innerText = "You feel energized, but your hands are shaking slightly from the caffeine."
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "lowlife") {
+                    document.getElementById("histoire").innerText = "You feel energized, but your hands are shaking slightly from the caffeine."
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "stranger") {
+                    document.getElementById("histoire").innerText = "You feel energized, but your hands are shaking slightly from the caffeine."
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+            }
+ 
+           function c1p4() {
+                if (character == "runaway") {
+                    document.getElementById("histoire").innerText = "You feel refreshsed and more confidant"
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "lowlife") {
+                    document.getElementById("histoire").innerText = "gets into a fight"
+                    document.getElementById("opt1").innerText = "(ANY). Continue"
+                    document.getElementById("opt2").innerText = ""
+                    document.getElementById("opt3").innerText = ""
+                    document.getElementById("opt4").innerText = ""
+                }
+                else if (character == "stranger") {
+                    
+                    if (story.includes("quiet", 2)) {
+                        document.getElementById("histoire").innerText = "You stay silent, and the crowd laughs at you"
+                        document.getElementById("opt1").innerText = "(ANY). Continue"
+                        document.getElementById("opt2").innerText = ""
+                        document.getElementById("opt3").innerText = ""
+                        document.getElementById("opt4").innerText = ""
+                    }
+                    else if (story.includes("insult",2)) {
+                        document.getElementById("histoire").innerText = "The thug punches you, and you punch back"
+                        document.getElementById("opt1").innerText = "(ANY). Continue"
+                        document.getElementById("opt2").innerText = ""
+                        document.getElementById("opt3").innerText = ""
+                        document.getElementById("opt4").innerText = ""
+                    }
+                    else if (story.includes("attack",2)) {
+                        document.getElementById("histoire").innerText = "You knock the thug out with a single punch to the face!"
+                        document.getElementById("opt1").innerText = "(ANY). Continue"
+                        document.getElementById("opt2").innerText = ""
+                        document.getElementById("opt3").innerText = ""
+                        document.getElementById("opt4").innerText = ""
+                    } 
+                }
+            }
+
+            function c1ps() {
+                document.getElementById("histoire").innerText = "No one dares call the police"
+                document.getElementById("opt1").innerText = "(ANY). Continue"
+                document.getElementById("opt2").innerText = ""
+                document.getElementById("opt3").innerText = ""
+                document.getElementById("opt4").innerText = ""
+            }
+
+            function c2p1() {
+                document.getElementById("histoire").innerText = "WELCOME TO CHAPTER 2! EXPLORE MORE CHOICES!"
+                document.getElementById("opt1").innerText = "Coming soon"
+                document.getElementById("opt2").innerText = "Coming soon"
+                document.getElementById("opt3").innerText = "Coming soon"
+                document.getElementById("opt4").innerText = "Coming soon"
+            }
+
+            //character selection
+            if (character == "lowlife") {
+                document.getElementById("output").style.color = "#c65339";
+                document.getElementById("output").style.backgroundColor = "1e1e1e1e";
+                document.getElementById("output").style.border = "2px solid #c65339";
+            }
+            else if (character == "runaway") {
+                document.getElementById("output").style.color = "#6344ed";
+                document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                document.getElementById("output").style.border = "2px solid #6344ed";
+            }
+            else if (character == "stranger") {
+                document.getElementById("output").style.color = "#6bc44c";
+                document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                document.getElementById("output").style.border = "2px solid #6bc44c";
+            }
+            else if (character == "placeholder") {
+                document.getElementById("output").style.color = "#ffffff";
+                document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                document.getElementById("output").style.border = "2px solid #ffffff";
+            }
+       </script>
+        -->
+
+       
+    </body>
+
+    <script>
+        var index = []
+        var expected = 0
+        var character = "placeholder"
+        var prev = 0
+
+        document.getElementById("chosen").focus(); 
+
+        chosen()
+       function chosen() {
+            choice = document.getElementById("chosen").value
+            document.getElementById("chosen").value = ""
+
+            if(index.length == 0) {
+                choochar()
+                expected++
+            }
+            if(index.length == 1) {
+                shochar()
+                filler()
+                expected++
+            }
+            if(index.length == 2) {
+                
+                expected++
+            }
+            if(index.length == 3) {
+                
+                expected++
+            }
+
+        }
+
+
+
+        function filler() {
+            index.push(0)
+        }
+
+        function choochar() {
+            document.getElementById("outext").innerText = "....................................................................................................................................\n....................................................................................................................................\n................................................................:,,;:...............................................................\n................................................................;?%$$%+.............................................................\n..............................................................*%$$$$$$$?,...........................................................\n.............................................................;$$$$$$$$$$+:,.........................................................\n...........................................................,+$$$$$$$$$$%$$*..+......................................................\n...........................................................;$$$$$$$$$$$$$$$*.;......................................................\n.........................................................;%$$$$$$$$$$$$$$$$%*.......................................................\n........................................................*$$$$$$$$$$$$$$$$$$$$?,.....................................................\n.......................................................+%$$$$$$$$$$$$$$$$$$$$$%*,.,.................................................\n.....................................................:*$$$$$$$$$$$$$$$$$$$$$$$$$+:,.................................................\n....................................................+$$$$$$$$$$$$$$$$$$$$$$$$$$$$*,.................................................\n...................................................;$$$$$$$$$$$$$$$$$$$$$$$$$$$$%$%;................................................\n.................................................,+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%$%+.:...,.........................................\n.................................,.............:*%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?;..,,.........................................\n.......................:....,+;;;++;+%%%%%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%??%%%%%%*;;;;;;+:..........................\n.........;:,,,,,+++++++++?%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%*++++++*:,,,,,........\n..........*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%:.......\n..........*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%+.......\n...........:;+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%*:.........\n...............**%$$%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?;,...........\n.................,;?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%,,..............\n...................,++%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%+..................\n.......................:%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?;,....................\n........................,,;?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%+,.......................\n............................:%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%*;..........................\n...............................;?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?;,............................\n.................................,+?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%*:...............................\n....................................;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*,.................................\n....................................,$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*.................................\n....................................;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*.................................\n...................................;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*.................................\n...................................;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?................................\n...................................+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?................................\n.................................:?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$?................................\n.................................?$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?...............................\n.................................*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%????$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%...............................\n.................................*$$$$$$$$$$$$$$$$$$$$$$$$$%$%*::.....::+%$$$$$$$$$$$$$$$$$$$$$$$$$$%:..............................\n................................*%$$$$$$$$$$$$$$$$$$$$%%*+;,,,............,:++%%$$$$$$$$$$$$$$$$$$$$$$,.............................\n................................%$$$$$$$$$$$$$$$$$%??;..........................:*%??$$$$$$$$$$$$$$$$$$:............................\n...............................:%$$$$$$$$$$$$%*?;:,..................................::*%$$$$$$$$$$$$$$:............................\n...............................$$%$$$$$%%**;,,...........................................,:**%%$$$$$$$$:............................\n...............................;%$$%%?;........................................................;;*%%$$%:............................\n................................:::,................................................................::..............................\n....................................................................................................................................\n....................................................................................................................................\n....................................................................................................................................\n....................................................................................................................................\n....................................................................................................................................\n"
+                    
+            document.getElementById("histoire").innerText = "Welcome! Choose your Character!"
+            document.getElementById("opt").innerText = "OPTIONS:"
+
+            document.getElementById("opt1").style.color = "#c65339";
+            document.getElementById("opt1").innerText = "1. THE LOWLIFE: A thug who grew up having to fend for himself in the criminal underworld. His rough upbringing has taught him to do anything to survive, and he is skilled in theft and evasion."
+
+            document.getElementById("opt2").style.color = "#6344ed";
+            document.getElementById("opt2").innerText = "2. THE RUNAWAY: A runaway of noble descent, she is looking to make her own way in life. Due to her noble upbringing, she is very good at persuading people to do her bidding."
+
+            document.getElementById("opt3").innerText = ""
+
+            document.getElementById("opt4").innerText = ""
+            
+            
+            if (choice == 1 || choice == 2) {
+                if (choice == 1) {
+                    index.push(1)
+                    character = "lowlife"
+
+                    document.getElementById("histoire").style.color = "#c65339";
+                    document.getElementById("output").style.color = "#c65339";
+                    document.getElementById("output").style.backgroundColor = "1e1e1e1e";
+                    document.getElementById("output").style.border = "2px solid #c65339";
+                }
+
+                if (choice == 2) {
+                    character = "runaway"
+                    index.push(2)
+
+                    document.getElementById("histoire").style.color = "#6344ed";
+                    document.getElementById("output").style.color = "#6344ed";
+                    document.getElementById("output").style.backgroundColor = "#1e1e1e";
+                    document.getElementById("output").style.border = "2px solid #6344ed";
+                }
+
+
+            }
+        }
+    
+        function shochar() {
+
+            if (index[0] == 1) {
+
+                document.getElementById("outext").innerText = "....................................................................................................................................\n..........................................................................................................................,.........\n..........................................................................................................................;;........\n..........................................................................................................................+*........\n..........................................................................................................................*?:.......\n.........................................................................................................................,??+.......\n..........................................................................................................................*??:......\n..............:...........................................................................................................:??*,.....\n.............*;............................................................................................................+??*.....\n...........,+*..............................................................................................................+??+....\n..........,*?+...............................................................................................................+??;...\n..........*??,................................................................................................................+??;..\n..........*?+..................................................................................................................*??,.\n.........:??,..................................................................................................................:??*.\n.........+?+....................................................................................................................*??;\n........:??,....................................................................................................................;??+\n.......:*?+.....................................................................................................................;??;\n......:*?*......................................................................................................................+?*,\n.....:*??:......................................................................................................................*?;.\n....:*??+......................................................................................................................,??,.\n...:*??*.................................,;;;;,,....................................,:;;;:,,...................................:?*..\n..:????;..............................,+*??????*+:,..............................:+*???????**;:................................+?+..\n..*???*..............................;*???????????*+,..........................,*??????????????*;,.............................*?;..\n.+????;.............................*????????????????+,.......................+???????????????????*;,.........................:??:..\n,?????,...........................,*???????????????????+:...................,*???????????????????????+,.......................+??:..\n;?????,..........................;???????????????????????*:................;*??????????????????????????*;,...................:??*,..\n+?????:.........................+??????????*???????????????*+:..........,;*???????????***?????????????????+:................:*??*...\n+?????+.......................,*???????*;,,.,,;*??????????????*+;:::::;+*?????????*+:,...,;*????????????????**;:........::;*????*...\n;??????:.....................:*??????*;.........:+??????????????????????????????*;,.........;*??????????????????***++***????????+...\n,??????*....................:???????+,............:*???????????????????????????+,............,+?????????????????????????????????;...\n.+??????*..................;???????;................;*???????????????????????*,................+????????????????????????????????:...\n..*??????*,..............,*???????;..................,+????????????????????*;...................;??????????????????????????????*,...\n..:????????+:,.......,:;*????????;.....................:*????????????????*;......................;?????????????????????????????+....\n...;?????????*********??????????;........................*???????????????+........................+???????????????????????????+.....\n....;??????????????????????????+........................+?????????????????+........................+??????????????????*******+......\n.....:*???????????????????????+.......................,*???????????????????*,......................,*???????????*+;:,,..............\n......,;+*????????????????????;......................:*?????????????????????*,......................+????????*+,....................\n..........,,,:;;+*????????????*+,...................;?????????????????????????:...................;*???????+:.......................\n..................:+*????????????+,...............,+???????????????????????????+,...............;*???????*;.........................\n....................,+?????????????+,............:*?????????????**+*????????????*:............;*????????+,..........................\n......................;??????????????*;........:+?????????????+:,...,:*???????????+:.......,+*?????????+............................\n.......................;???????????????*+;;;;;*?????????????+,.........;????????????*+;;;+*???????????+.............................\n........................;?????????????????????????????????*,............,*???????????????????????????+..............................\n.........................;??????????????????????????????*:...............,*?????????????????????????+...............................\n..........................,*???????????????????????????+...................+???????????????????????*,...............................\n............................:*???????????????????????+:.....................:*????????????????????*,................................\n..............................:+*??????????????????*:.........................+??????????????????*,.................................\n................................,:+*?????????????*;............................,+*?????????????*;...................................\n....................................::++*????**;,.................................;+*????????*;,....................................\n.........................................::::.......................................,:+++++;:.......................................\n"
+
+                document.getElementById("histoire").innerText = "Wonderfull! press any key to continue"
+
+                document.getElementById("opt1").style.color = "#ffffff";
+                document.getElementById("opt1").innerText = ""
+
+                document.getElementById("opt2").style.color = "#ffffff";
+                document.getElementById("opt2").innerText = ""
+
+                document.getElementById("opt3").style.color = "#ffffff";
+                document.getElementById("opt3").innerText = ""
+            }
+            else if (index[0] == 2) {
+                document.getElementById("outext").innerText = "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%%$$$$####$$%*+;,............................,;+*%$$####$$$$%%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?*+:,............................,:+*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%???*+;;:,............................,:;;+*???%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$%%%%%$$$$$$$$$$%%?**+;;::,,,..............................,,,::;;+**?%%$$$$$$$$$$%%%%%$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?*;:,............................................,:;*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%??*+;:,..............................................,:;+*??%%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$%%%%%$$$$$$$$$$%%?*++;;::,,................................................,,::;;++*?%%$$$$$$$$$$%%%%%$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$%%%$$$$$$$$$$%%?*;:,............................................................,:;*?%%$$$$$$$$$$%%%$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$%%%%%??*+;:,..............................................................,:;+*??%%%%%$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$%%%%%$$$$$$$$$$%%?**+;;;:,,................................................................,,:;;;+**?%%$$$$$$$$$$%%%%%$$$$$$$\n$$$$$$$$%%%$$$$$$$$$$%%?+;:,,..........................................................................,,:;+?%%$$$$$$$$$$%%%$$$$$$$$\n$$$$$$$$$$$$$$$$$%%%%?*+;:,..............................................................................,:;+*?%%%%$$$$$$$$$$$$$$$$$\n%%%$$$$$$$$$$$%%?**++;;:,,................................................................................,,:;;++**?%%$$$$$$$$$$$%%%\n%%%$$$$$$$$$$%?*+;:,,..........................................................................................,,:;+*?%$$$$$$$$$$%%%\n$$$$$$$$$$%%%?*+;:,..............................................................................................,:;+*?%%%$$$$$$$$$$\n$$$$$$%%??*++;;:,,.......................................,::;;;;++++;;;;::,.......................................,,:;;++*??%%$$$$$$\n###$$%??+;:,,,,.........................................,:;+*??%%%%%%??*+;:,.........................................,,,,:;+??%$$###\n$$$%%?*+;:,...........................................,,;+*?%$$$####$$$%?*+;,,...........................................,:;+*?%%$$$\n****++;::,.......................................,,::;;+**?%%$$######$$%%?**+;;::,,.......................................,::;++****\n,,,,,,,,........................................,:;+*??%%%%%$$$$$$$$$$$$%%%%%??*+;:,........................................,,,,,,,,\n..............................................,,;+*?%$$$$$$$$$$$%%%%$$$$$$$$$$$%?*+;,,..............................................\n.........................................,,:::;+**?%$$$$$$$$$$%%%%%%%%$$$$$$$$$$%?**+;:::,,.........................................\n........................................,:;+*???%%%%$$$$$$$$$$$%%%%%%$$$$$$$$$$$%%%%???*+;:,........................................\n......................................,:;+*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?*+;:,......................................\n................................,,,:::;++*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?*++;:::,,,................................\n...............................,:;++**??%%%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%??**++;:,...............................\n..............................,:;+*?%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%?*+;:,..............................\n:::::,,,......................,:;+?%$$###$$$$%%%%????**************************????%%%%$$$$###$$%?+;:,......................,,,:::::\n*****+;;:,....................,:;+?%$$$###$$$%%??*+;;::::::::::::::::::::::::::;;+*??%%$$$###$$$%?+;:,....................,:;;+*****\n$$$$%?*+;:,...................,:;+*?%$$$$#$$$%%?*+;,,..........................,,;+*?%%$$$#$$$$%?*+;:,...................,:;+*?%$$$$\n###$$%%?*+;:,,,,,,,,,,,,......,:;+*?%$$$##$$$%%?*;:,............................,:;*?%%$$$##$$$%?*+;:,..............,,,,:;+*?%%$$###\n$$$$$$%%??**+++*****++;;:,.....,;+*?%$$$##$$$%%?*;:,............................,:;*?%%$$$##$$$%?*+;:,...........,,:;;++**??%%$$$$$$\n$$$$$%%%%%%%%%%%%$$%%??+;:,....,:+*?%$$$$#$$$%%?*+:,............................,:+*?%%$$$#$$$$%?*+;:,...........,:;+*?%%$$$$$$$$$$$\n$$$$$$$$$$$$$$$#####$$?*+:,....,:+*?%$$$##$$$%%?*+:,............................,:+*?%%$$$##$$$%?*+;:,...........,;+*?%$###$$$$$$$$$\n$$$$$$$$$$$$#########$%*+:,....,;+*%$$#####$$%%?*;:,............................,:;*?%%$$#####$$%?+;:,...........,;+*%$$#####$$$$$$$\n$$$$$$$$$$$$$$$$###$$%?*+:,....,;+*%$$$####$$%%?*;:,............................,:;*?%%$$####$$$%?+;:,...........,:+*?%$$##$$$$$$$$$\n?????????????%%%%%%%??*+;:,....,:;+*?%%%$$$$$%%?*+:,............................,:+*?%%$$$$$%%%?**+:,,...........,:;+*??%%%%%%%?????\n+++++++++++++++++++++;;:,,......,::;;++*??%%$%%?*+;,............................,;+*?%%$%%??*++;;::,,.............,::;;;++++++++++++\n,,,,,,,,,,,,,,,,,,,,,,..............,,:;+*?%%$%?*+;,............................,;+*?%$%%?*+;:,,.......................,,,,,,,,,,,,,\n.......................................,;+?%%$%?*+;,............................,;+*?%$%%?+;,.......................................\n.......................................,;+?%$$$%?+;:............................:;+?%$$$%?+;,.......................................\n.......................................:;*?%$$$%?+;:............................:;+?%$$$%?*;:.......................................\n.......................................:;+*?%%%?*+:,............................,:+*?%%%?*+;:.......................................\n........................................,:;;+++;;:,..............................,:;;+++;;:,........................................\n............................................,,,......................................,,,............................................\n....................................................................................................................................\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n????????????????????????????????????????**********????????????????????????????????**********????????????????????????????????????????\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n"
+
+                document.getElementById("histoire").innerText = "Wonderfull! press any key to continue"
+
+                document.getElementById("opt1").style.color = "#ffffff";
+                document.getElementById("opt1").innerText = ""
+
+                document.getElementById("opt2").style.color = "#ffffff";
+                document.getElementById("opt2").innerText = ""
+
+                document.getElementById("opt3").style.color = "#ffffff";
+                document.getElementById("opt3").innerText = ""
+            }
+        }
+    
+        function drinkchoice() {
+
+        }
+    </script>
+</html>
+
+
+
+            <!--TEMPLATE
+        if (index.length == x)  {
+
+
+
+            prev = index[index.length - 1];
+            if (choice == 1 || choice == 2 || choice == 3) {
+                if (choice == 1) {
+                index.push(1)
+                }
+
+                if (choice == 2) {
+                index.push(2)
+
+                }
+
+                if (choice == 3) {
+                index.push(3)
+                        
+                }
+
+                expected ++
+                if (index.length != expected) {
+                            index.push(0)
+                }
+                }
+        }
+            
+            
+            
+            
+            -->

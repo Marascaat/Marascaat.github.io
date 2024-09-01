@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<style>
+* {
+    font-family: monospace;
+    margin:0;
+    padding:0;
+    
+}
+
+html {
+    background-color: #0099db;
+    font-size: 20px; 
+}
+
+header {
+    font-size: 30px;
+    padding: 2% 2%;
+    left: 0;
+    top: 0;
+    width: 96%;
+    background-color: #124e89;
+    color: #181425;
+}
+
+.explanation {
+    margin:2% 3%;
+    .compatList {
+        margin:0.5% 2%;
+    }
+}
+
+
+
+.inputImage {
+    text-align:center;
+    background-color: #124e89;
+}
+
+input[type=file] {
+    font-size: 15px;
+    margin:2% 0%;
+    padding: 2% 2%;
+    border: 8px solid #262b44;
+    color: #181425;
+    background-color: #124e89;
+    
+}
+input[type=file]:hover {
+    border: 8px solid #262b44;
+    color: #181425;
+    background-color: #3a4466;
+}
+
+input[type=range] {
+    appearance: none;
+    background: #0099db ;
+    border: 1px solid #124e89;
+    border-radius: 6px;
+}
+input[type=range] {
+    appearance: none;
+    background: #0099db ;
+}
+input[type=range]::-moz-range-thumb {
+    background: #124e89;
+    border: 1px solid #124e89;
+    width: 25px;
+    height: 20px;
+}
+input[type=range]::-webkit-slider-thumb {
+    background: #124e89;
+    border: 1px solid #124e89;
+    width: 25px;
+    height: 20px;
+}
+.row {
+    display: flex;
+    color: #c0cbdc;
+  } 
+  /* Create two equal columns that sits next to each other */
+.column {
+ flex: 50%;
+padding: 10px;
+height: 300px; 
+}
+.dropdown {
+    color: #124e89;
+}
+
+button {
+    background-color: #c0cbdc;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: default;
+    border: none;
+    color: #262b44;
+    padding: 20px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    width: 300px;
+    transition: color 1s, background-color 1s, width 0.5s, border-radius 0.5s;    
+}
+
+button:hover {
+    background-color: #262b44;
+    color: #c0cbdc;
+    border-radius: 20px;
+    width: 290px;
+    border-radius: 50px;
+}
+footer {
+    padding: 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #c0cbdc;
+    font-size: 40px;
+    margin: -0px 0px;
+    }
+    a {
+        color: #c0cbdc;
+        text-decoration: none;
+    }
+    a:visited {
+    color: #c0cbdc;
+    }
+    a:hover, a:active {
+    color:  #0099db;
+    }
+
+</style>
+
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "author" content = "Marascaat">
+        <meta name = "description" content="Convert any old image into ASCII art!'">
+        
+        <title>ASCII Art Generator</title>
+        <link rel="icon" href="/icons/meow.gif" type="image/x-icon">
+        <link rel="stylesheet" href = "" type="text/css">
+        
+    </head>
+
+    <body>
+        <header>
+            <h1>Coming Soon!</h1>
+            <a href="/index.html"><button>Return to the Wonderworks</button></a>
+        </header>
+
+        <div class="explanation">
+            <h1>Upload the image you would like to convert!</h1>
+            <p1>Supported formats:</p1>
+            <div class="compatList">
+            <dl>
+                <di> PNG</di>
+                <br>
+                <di>JPEG</di>
+                <br>
+                <di>GIF</di>
+            </div>
+        </div>
+
+        <div class="inputImage">
+            <input type="file" id="input" name="image" accept="image/png, image/jpeg, image/gif" onchange="update()"/>
+        </div>
+
+        <img id="output" width="200" height="200">
+
+        <div class="output">
+            <p1>
+
+            </p1>
+        </div>
+
+        <div class="parameters">     
+            <div class="row">
+                <div class="column" style="background-color:#262b44;">
+                  <h2>Gradient:</h2>
+                    <br>
+                    <div class="dropdown">
+                  <select id="charset" name="charset" onchange="update()">
+                    <option value="placehold1" selected>ONE</option>
+                    <option value="placehold2">TWO</option>
+                    <option value="placehold3">12703498570293_!)@(#*$)&092</option>
+                    <option value="placehold4">234&*^$%#%&$%^^0594367*%7)68</option>
+                    <option value="placehold5"><strong>F U C K</strong></option>
+                    </select>
+                    </div>
+                </div>
+                <div class="column" style="background-color:#3a4466 ;">
+                    <h2>
+                    <label for="contrast" id="rangeValue">Contrast:</label>
+                    </h2>
+                    <br>
+                    <input type="range" id="contrast" name="Contrast" min="1" onchange="update()" max="200"
+                    oninput="rangeValue.innerText = 'Contrast:' + this.value ">  
+                </div>
+                <div class="column" style="background-color:#262b44;">
+                    <h2>Size:</h2>
+                    <p1></p1>
+                    <br>
+                    <div class="dropdown">
+                    <select id="size" name="size" onchange="update()">
+                        <option value="smallest" selected>Smallest</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                        <option value="largest">Largest</option>
+                    
+                    
+                    
+                    </select>
+                    </div>
+                </div>
+                <div class="column" style="background-color:#3a4466;">
+                    <h2>
+                    <label for="vol" id="brightValue">Brightness:</label>
+                    </h2>
+                    <br>
+                    <input type="range" id="brightValue" name="Brightness" onchange="update()" min="1" max="200"
+                    oninput="brightValue.innerText = 'Brightness:' + this.value ">  
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <h6 style="text-align: left;"><a href="https://github.com/Marascaat/Marascaat.github.io">&lt;&lt;&lt; &copy;Marascaat &gt;&gt;&gt;</a></h6>
+        </footer>
+
+        <script>
+            var input
+            function update() {
+                var image = document.getElementById('output');
+	            image.src = URL.createObjectURL(document.getElementById('input').files[0]);
+                let inputImage = document.getElementById('output');
+                let canvas = document.createElement("canvas");
+                //canvas.style.display = "none";
+                canvas.width = inputImage.width;
+                canvas.height = inputImage.height;
+                let ctx = canvas.getContext("2d");
+                ctx.drawImage(inputImage, 0, 0);
+                let surface = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+                for (let y = 0; y != surface.height; y++) { 
+                    for (let x = 0; x != surface.width; x++) { 
+                    //Remember this formula! 
+                    //i = (y * width + x) * depth 
+                    let i = (y * surface.width + x) * 4; 
+                    //compute the average of RGB components 
+                    let intensity = ( 
+                      surface.data[i + 0] + 
+                      surface.data[i + 1] + 
+                      surface.data[i + 2] 
+                    ) / 3; 
+                    //set the RGB components to the average. Each component 
+                    //has the same value so it is a shade of gray 
+                    surface.data[i + 0] = intensity; 
+                    surface.data[i + 1] = intensity; 
+                    surface.data[i + 2] = intensity; 
+                    } 
+                    } 
+                
+                    //Now you can put it back onto the canvas 
+                    ctx.putImageData(surface, surface.width, surface.height); 
+                
+                    //From the canvas you can create a data URL 
+                    let url = canvas.toDataURL(); 
+ 
+                    //Let's just overwrite the input image with the new greyscale image 
+                    inputImage.src = url; 
+                    image.src = url;
+
+            }
+            
+
+
+            function update() {
+                
+            }
+        </script>
+    </body>
+</html>
